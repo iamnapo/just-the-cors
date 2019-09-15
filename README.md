@@ -2,12 +2,12 @@
 
 > Tiny middleware to add cors support when using zeit's micro.
 
-[![travis](https://img.shields.io/travis/com/iamnapo/just-the-cors.svg?style=for-the-badge&logo=travis&label=)](https://travis-ci.com/iamnapo/just-the-cors) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
+[![travis](https://img.shields.io/travis/com/iamnapo/just-the-cors.svg?style=for-the-badge&logo=travis&label=)](https://travis-ci.com/iamnapo/just-the-cors) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
 
 ## Install
 
-```sh
-$ npm i just-the-cors micro
+```console
+$ npm i just-the-cors
 ```
 
 ## Example
