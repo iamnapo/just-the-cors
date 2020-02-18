@@ -2,7 +2,7 @@
 
 > Tiny middleware to add cors support when using zeit's micro.
 
-[![travis](https://img.shields.io/travis/com/iamnapo/just-the-cors.svg?style=for-the-badge&logo=travis&label=)](https://travis-ci.com/iamnapo/just-the-cors) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
+[![build](https://img.shields.io/github/workflow/status/iamnapo/just-the-cors/Install%20%26%20test?style=for-the-badge&logo=github&label=)](https://github.com/iamnapo/just-the-cors/actions) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
 
 ## Install
 
