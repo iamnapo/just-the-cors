@@ -23,9 +23,7 @@ test("different routes", async (t) => {
 });
 
 test("routes with params and query", async (t) => {
-	const hello = (req) => `Hello ${req.params.msg} ${req.query.time}`;
-
-	const routes = router(get("/hello/:msg", cors(hello)));
+	const routes = router(get("/hello/:msg", cors((req) => `Hello ${req.params.msg} ${req.query.time}`)));
 
 	const url = await server(routes);
 	const body = await got.get(`${url}/hello/world?time=now`).text();
@@ -43,12 +41,10 @@ test("routes with underline", async (t) => {
 });
 
 test("async handlers", async (t) => {
-	const hello = (req) => {
+	const routes = router(get("/hello/:msg", (req) => {
 		cors(req);
 		return Promise.resolve(`Hello ${req.params.msg} ${req.query.time}`);
-	};
-
-	const routes = router(get("/hello/:msg", hello));
+	}));
 
 	const url = await server(routes);
 	const body = await got.get(`${url}/hello/world?time=now`).text();

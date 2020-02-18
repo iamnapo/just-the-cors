@@ -9,7 +9,7 @@ module.exports = (...args) => {
 				res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
 				res.setHeader("Access-Control-Request-Headers", "Vary");
 				const reqHeaders = req.headers["access-control-request-headers"];
-				if (reqHeaders && reqHeaders.length) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
+				if (reqHeaders && reqHeaders.length > 0) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
 				res.setHeader("Content-Length", "0");
 				res.statusCode = 204;
 				return res.end();
@@ -28,7 +28,7 @@ module.exports = (...args) => {
 		res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
 		res.setHeader("Access-Control-Request-Headers", "Vary");
 		const reqHeaders = req.headers["access-control-request-headers"];
-		if (reqHeaders && reqHeaders.length) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
+		if (reqHeaders && reqHeaders.length > 0) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
 		res.setHeader("Content-Length", "0");
 		res.statusCode = 204;
 		return res.end();
