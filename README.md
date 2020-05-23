@@ -1,8 +1,8 @@
 # just-the-cors
 
-> Tiny middleware to add cors support when using zeit's micro.
+> Tiny middleware to add cors support when using zeit's micro
 
-[![build](https://img.shields.io/github/workflow/status/iamnapo/just-the-cors/Install%20%26%20test?style=for-the-badge&logo=github&label=)](https://github.com/iamnapo/just-the-cors/actions) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
+[![build](https://img.shields.io/github/workflow/status/iamnapo/just-the-cors/CI?style=for-the-badge&logo=github&label=)](https://github.com/iamnapo/just-the-cors/actions) [![npm](https://img.shields.io/npm/v/just-the-cors.svg?style=for-the-badge&logo=npm&label=)](https://www.npmjs.com/package/just-the-cors) [![dependencies](https://img.shields.io/david/iamnapo/just-the-cors.svg?style=for-the-badge)](./package.json) [![license](https://img.shields.io/github/license/iamnapo/just-the-cors.svg?style=for-the-badge)](./LICENSE)
 
 ## Install
 
@@ -44,7 +44,7 @@ module.exports = router(
 const { router, get } = require("microrouter");
 const cors = require("just-the-cors");
 
-const hello1 = req => {
+const hello1 = (req) => {
 	cors(req); // Does nothing!
 	return "Hello 1";
 };
@@ -59,7 +59,3 @@ module.exports = router(
 	get("/hello2", hello2) // "Access-Control-Allow-Origin": ✅
 );
 ```
-
-## License
-
-MIT © [Napoleon-Christos Oikonomou](https://iamnapo.me)

@@ -1,4 +1,4 @@
-name: Install & test
+name: CI
 
 on:
   push:
@@ -10,8 +10,7 @@ on:
       - "docs/**"
       - "media/**"
 jobs:
-  test:
-    name: Test
+  ci:
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -21,6 +20,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "12.x"
-      - run: npm i
-      - run: npm test
+          node-version: 14
+      - run: yarn
+      - run: yarn test
+        env:
+          CI: true
