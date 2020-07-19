@@ -1,6 +1,6 @@
 {
 	"name": "just-the-cors",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Tiny middleware to add cors support when using zeit's micro",
 	"keywords": [
 		"cors",
