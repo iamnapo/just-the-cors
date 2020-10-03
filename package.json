@@ -27,23 +27,23 @@
 	],
 	"scripts": {
 		"lint": "eslint .",
-		"test": "yarn lint && ava -v"
+		"test": "npm run lint && ava -v"
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn test"
+			"pre-commit": "npm test"
 		}
 	},
 	"dependencies": {},
 	"devDependencies": {
-		"ava": "^3.10.1",
+		"ava": "^3.13.0",
 		"babel-eslint": "^10.1.0",
-		"eslint": "^7.5.0",
-		"eslint-config-iamnapo": "^6.0.3",
-		"eslint-plugin-import": "^2.22.0",
-		"eslint-plugin-unicorn": "^21.0.0",
-		"got": "^11.5.1",
-		"husky": "^4.2.5",
+		"eslint": "^7.10.0",
+		"eslint-config-iamnapo": "^8.0.1",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-unicorn": "^22.0.0",
+		"got": "^11.7.0",
+		"husky": "^4.3.0",
 		"micro": "^9.3.4",
 		"microrouter": "^3.1.3",
 		"test-listen": "^1.1.0"
