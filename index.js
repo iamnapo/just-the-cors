@@ -1,5 +1,5 @@
 module.exports = (...args) => {
-	if (args.length === 1 && typeof args[0] === "function") {
+	if (typeof args[0] === "function") {
 		const cb = args[0];
 		return (req, res) => {
 			res.setHeader("Access-Control-Allow-Origin", "*");
@@ -10,9 +10,11 @@ module.exports = (...args) => {
 				res.setHeader("Access-Control-Request-Headers", "Vary");
 				const reqHeaders = req.headers["access-control-request-headers"];
 				if (reqHeaders && reqHeaders.length > 0) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
-				res.setHeader("Content-Length", "0");
-				res.statusCode = 204;
-				return res.end();
+				if (args[1] && args[1].autoHandleOptions) {
+					res.setHeader("Content-Length", "0");
+					res.statusCode = 204;
+					return res.end();
+				}
 			}
 
 			return cb(req, res);
@@ -29,9 +31,11 @@ module.exports = (...args) => {
 		res.setHeader("Access-Control-Request-Headers", "Vary");
 		const reqHeaders = req.headers["access-control-request-headers"];
 		if (reqHeaders && reqHeaders.length > 0) res.setHeader("Access-Control-Allow-Headers", reqHeaders);
-		res.setHeader("Content-Length", "0");
-		res.statusCode = 204;
-		return res.end();
+		if (args[2] && args[2].autoHandleOptions) {
+			res.setHeader("Content-Length", "0");
+			res.statusCode = 204;
+			return res.end();
+		}
 	}
 
 	return args;
