@@ -2,7 +2,7 @@ const test = require("ava");
 const micro = require("micro");
 const listen = require("test-listen");
 const got = require("got");
-const { router, get } = require("microrouter");
+const { router, get, options } = require("microrouter");
 
 const cors = require("..");
 
@@ -107,4 +107,21 @@ test("works with cors", async (t) => {
 	t.true(!Object.prototype.hasOwnProperty.call(headersBefore, "access-control-allow-origin"));
 	t.true(Object.prototype.hasOwnProperty.call(headersAfter, "access-control-allow-origin"));
 	t.is(headersAfter["access-control-allow-origin"], "*");
+});
+
+test("allow manual handling of OPTIONS requests", async (t) => {
+	const routes = router(
+		options("/foo", cors(() => ({ name: "foo" }), { autoHandleOptions: false })),
+		options("/bar", (req, res) => {
+			cors(req, res, { autoHandleOptions: false });
+			return micro.send(res, 200, "bar");
+		}),
+	);
+
+	const url = await server(routes);
+	const fooGet = await got(`${url}/foo`, { method: "options" }).json();
+	const barGet = await got(`${url}/bar`, { method: "options" }).text();
+
+	t.is(fooGet.name, "foo");
+	t.is(barGet, "bar");
 });

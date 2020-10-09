@@ -25,14 +25,14 @@ const hello2 = (req, res) => {
 	return send(res, 200, { message: "Hello 2!" });
 };
 const hello3 = (req, res) => send(res, 200, { message: "Hello 3!" });
+const hello4 = (req, res) => send(res, 200, { message: "Hello 4!" });
 
 module.exports = router(
 	get("/hello/1", hello),
 	get("/hello/2", hello2),
 	get("/hello/3", cors(hello3)),
-	getWithCors("/*", (req, res) =>
-		send(res, 200, { message: "Hello in general!" })
-	)
+	options("/hello/4", cors(hello4, { autoHandleOptions: false })),
+	getWithCors("/*", (req, res) => send(res, 200, { message: "Hello in general!" })),
 );
 ```
 
